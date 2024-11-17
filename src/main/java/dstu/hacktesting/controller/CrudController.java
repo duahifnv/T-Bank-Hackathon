@@ -12,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public abstract class CrudController<T, D> {
     protected final CrudService<T, D> crudService;
+
     @GetMapping
     public ResponseEntity<List<T>> readAll() {
         return new ResponseEntity<>(crudService.readAll(), HttpStatus.OK);
