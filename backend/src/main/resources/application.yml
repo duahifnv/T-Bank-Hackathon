@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: tbankApp
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tbank_db
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+server:
+  port: 8080
