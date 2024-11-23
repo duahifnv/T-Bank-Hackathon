@@ -52,6 +52,7 @@ public class UserServiceImpl implements UserService {
                         "User with id: " + id + " not found"));
         userRepository.delete(user);
     }
+
     @Override
     public boolean loginValid(LoginRequest request) {
         Optional<User> userOptional = userRepository.findByLogin(request.getLogin());

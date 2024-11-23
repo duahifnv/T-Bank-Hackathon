@@ -2,6 +2,7 @@ package org.hack.service;
 
 import org.hack.dto.LoginRequest;
 import org.hack.dto.UserDto;
+import org.hack.entity.User;
 
 import java.util.List;
 
