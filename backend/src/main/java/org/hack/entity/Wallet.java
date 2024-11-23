@@ -18,7 +18,7 @@ public class Wallet {
     @Column(name = "wallet_id")
     private Long id;
     @OneToOne
-    @Column(name = "user_id", nullable = false)
+    @PrimaryKeyJoinColumn(name = "user_id")
     private User userId;
     @Column(name = "total")
     private double total;
