@@ -14,12 +14,12 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Wallet {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "wallet_id")
-    private Long id;
-    @OneToOne
     @PrimaryKeyJoinColumn(name = "user_id")
-    private User userId;
-    @Column(name = "total")
+    private Long userId;
+    @Column(name = "total", nullable = false)
     private double total;
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "user_id")
+    private User user;
 }

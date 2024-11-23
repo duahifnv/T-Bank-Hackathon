@@ -1,9 +1,10 @@
 package org.hack.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.hack.dto.UserDto;
 import org.hack.dto.WalletDto;
-import org.hack.entity.User;
 import org.hack.entity.Wallet;
+import org.hack.mapper.UserMapper;
 import org.hack.mapper.WalletMapper;
 import org.hack.repository.WalletRepository;
 import org.hack.service.WalletService;
@@ -25,22 +26,32 @@ public class WallerServiceImpl implements WalletService {
         return walletMapper.toListDto(wallets);
     }
     @Override
-    public WalletDto findById(Long id) {
-        Optional<Wallet> wallet = walletRepository.findById(id);
+    public WalletDto findById(Long userId) {
+        Optional<Wallet> wallet = walletRepository.findByUserId(userId);
         if (wallet.isPresent()) {
             Wallet walletDto = wallet.get();
             return walletMapper.modelToDto(walletDto);
         }
-        throw new RuntimeException("Отсутствует кошелек с id кошелька " + id);
+        throw new RuntimeException("Отсутствует кошелек с id кошелька " + userId);
     }
     @Override
-    public WalletDto findByUserId(User id) {
-        Optional<Wallet> wallet = walletRepository.findByUserId(id);
+    public void createWalletForUser(UserDto userDto) {
+        Long userId = userDto.getId();
+        Optional<Wallet> wallet = walletRepository.findByUserId(userId);
+        if (wallet.isEmpty()) {
+            WalletDto walletDto = new WalletDto(userId, 0);
+            walletRepository.save(walletMapper.dtoToModel(walletDto));
+        }
+        throw new RuntimeException("У пользователя " + userId + " уже есть кошелек");
+    }
+    @Override
+    public WalletDto findByUserId(Long userId) {
+        Optional<Wallet> wallet = walletRepository.findByUserId(userId);
         if (wallet.isPresent()) {
             Wallet walletFromRepo = wallet.get();
             return walletMapper.modelToDto(walletFromRepo);
         }
-        throw new RuntimeException("Отсутствует кошелек с id пользователя " + id.getId());
+        throw new RuntimeException("Отсутствует кошелек с id пользователя " + userId);
     }
     @Override
     public WalletDto save(WalletDto walletDto) {
@@ -48,12 +59,19 @@ public class WallerServiceImpl implements WalletService {
         return walletMapper.modelToDto(wallet);
     }
     @Override
-    public void deleteById(Long id) {
-        Optional<Wallet> wallet = walletRepository.findById(id);
+    public void deleteById(Long userId) {
+        Optional<Wallet> wallet = walletRepository.findByUserId(userId);
         if (wallet.isPresent()) {
-            Wallet walletFromRepo = wallet.get();
-            walletRepository.deleteById(id);
+            walletRepository.deleteByUserId(userId);
         }
-        throw new RuntimeException("Отсутствует кошелек с id кошелька " + id);
+        throw new RuntimeException("Отсутствует кошелек с id кошелька " + userId);
+    }
+    @Override
+    public void increaseByAmount(Long userId, double amount) {
+
+    }
+    @Override
+    public void decreaseByAmount(Long userId, double amount) {
+
     }
 }
