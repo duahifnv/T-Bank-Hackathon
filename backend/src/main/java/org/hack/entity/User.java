@@ -19,6 +19,6 @@ public class User {
     private Long id;
     @Column(name = "login", unique = true, nullable = false)
     private String login;
-    @Column(name = "pass", unique = true, nullable = false)
+    @Column(name = "pass", nullable = false)
     private String password;
 }
