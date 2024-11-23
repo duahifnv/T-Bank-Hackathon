@@ -17,10 +17,9 @@ public class RegisterController {
     private final UserService userService;
     @PostMapping
     public ResponseEntity<?> register(@RequestBody UserDto userDto) {
-        return new ResponseEntity<>(userDto.toString(), HttpStatus.UNAUTHORIZED);
-        /*if (userService.registerValid(userDto)) {
+        if (userService.registerValid(userDto)) {
             return ResponseEntity.ok().body(userService.save(userDto));
         }
-        return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);*/
+        return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
     }
 }
