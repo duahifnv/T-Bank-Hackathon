@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
@@ -38,14 +37,12 @@ public class UserServiceImpl implements UserService {
         return userMapper.modelToDto(user);
     }
     @Override
-    @Transactional
     public UserDto save(UserDto userDto) {
         return userMapper.modelToDto(
                 userRepository.save(userMapper.dtoToModel(userDto))
         );
     }
     @Override
-    @Transactional
     public void deleteById(Long id) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException(
