@@ -16,14 +16,14 @@ public class TransactionController {
     public ResponseEntity<?> getAllTransactions() {
         return ResponseEntity.ok(transactionService.findAll());
     }
-    @GetMapping("/{id}")
-    public ResponseEntity<?> getAllTransactionsByUserId(@PathVariable Long id) {
-        return ResponseEntity.ok(transactionService.findAllByUserId(id));
+    @GetMapping("/{login}")
+    public ResponseEntity<?> getAllTransactionsByUserLogin(@PathVariable String login) {
+        return ResponseEntity.ok(transactionService.findAllByUserLogin(login));
     }
-    @GetMapping("/{id}/{type}")
-    public ResponseEntity<?> getAllTransactionsByUserIdAndType(@PathVariable Long id,
+    @GetMapping("/{login}/{type}")
+    public ResponseEntity<?> getAllTransactionsByUserIdAndType(@PathVariable String login,
                                                                @PathVariable String type) {
-        return ResponseEntity.ok(transactionService.findAllByUserIdAndTransactionType(id, type));
+        return ResponseEntity.ok(transactionService.findAllByUserLoginAndTransactionType(login, type));
     }
     @PostMapping
     public ResponseEntity<?> createTransaction(@RequestBody TransactionDto transactionDto) {

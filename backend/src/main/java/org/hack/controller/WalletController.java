@@ -22,8 +22,12 @@ public class WalletController {
         List<WalletDto> wallets = walletService.findAll();
         return ResponseEntity.ok(wallets);
     }
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<WalletDto> getWalletByUserId(@PathVariable Long id) {
         return ResponseEntity.ok().body(walletService.findByUserId(id));
+    }
+    @GetMapping("/login/{login}")
+    public ResponseEntity<WalletDto> getWalletByUserLogin(@PathVariable String login) {
+        return ResponseEntity.ok().body(walletService.findByUserLogin(login));
     }
 }

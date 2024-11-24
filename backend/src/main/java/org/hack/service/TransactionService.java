@@ -9,8 +9,8 @@ import java.util.List;
 
 public interface TransactionService {
     List<TransactionDto> findAll();
-    List<TransactionDto> findAllByUserId(Long userId);
-    List<TransactionDto> findAllByUserIdAndTransactionType(Long userId, String type);
+    List<TransactionDto> findAllByUserLogin(String login);
+    List<TransactionDto> findAllByUserLoginAndTransactionType(String login, String type);
     TransactionDto add(TransactionDto transactionDto);
-    void delete(Long userId);
+    void deleteByLogin(String login);
 }

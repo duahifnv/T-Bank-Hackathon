@@ -19,9 +19,13 @@ import java.net.URISyntaxException;
 public class UserController {
     private final UserService userService;
     private final WalletService walletService;
-    @GetMapping("/{id}")
-    public ResponseEntity<UserDto> getUser(@PathVariable Long id) {
+    @GetMapping("{/id}")
+    public ResponseEntity<UserDto> getUserById(@PathVariable Long id) {
         return ResponseEntity.ok().body(userService.findById(id));
+    }
+    @GetMapping("/{login}")
+    public ResponseEntity<UserDto> getUserByLogin(@PathVariable String login) {
+        return ResponseEntity.ok().body(userService.findByLogin(login));
     }
     @PostMapping()
     public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto) {
@@ -34,9 +38,9 @@ public class UserController {
     public ResponseEntity<UserDto> updateUser(@RequestBody UserDto userDto) {
         return ResponseEntity.ok().body(userService.save(userDto));
     }
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable Long id) {
-        userService.deleteById(id);
+    @DeleteMapping("/{login}")
+    public ResponseEntity<?> deleteUserByLogin(@PathVariable String login) {
+        userService.deleteByLogin(login);
         return ResponseEntity.ok().build();
     }
 }

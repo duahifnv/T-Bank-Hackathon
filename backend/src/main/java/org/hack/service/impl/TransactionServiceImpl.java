@@ -33,19 +33,19 @@ public class TransactionServiceImpl implements TransactionService {
         return transactionMapper.toListDto(transactionRepository.findAll());
     }
     @Override
-    public List<TransactionDto> findAllByUserId(Long userId) {
+    public List<TransactionDto> findAllByUserLogin(String login) {
         List<Transaction> transactions =
-                transactionRepository.findAllByUserId(userId)
+                transactionRepository.findAllByUserLogin(login)
                         .orElseThrow(RuntimeException::new);
         return transactionMapper.toListDto(transactions);
     }
     @Override
-    public List<TransactionDto> findAllByUserIdAndTransactionType(Long userId, String type) {
+    public List<TransactionDto> findAllByUserLoginAndTransactionType(String login, String type) {
         if (!transactionTypes.contains(type)) {
             throw new RuntimeException("Не существующий тип");
         }
         List<Transaction> transactions =
-                transactionRepository.findAllByUserIdAndTransactionType(userId, type)
+                transactionRepository.findAllByUserLoginAndTransactionType(login, type)
                         .orElseThrow(RuntimeException::new);
         return transactionMapper.toListDto(transactions);
     }
@@ -59,9 +59,9 @@ public class TransactionServiceImpl implements TransactionService {
         return transactionMapper.modelToDto(transaction);
     }
     @Override
-    public void delete(Long userId) {
+    public void deleteByLogin(String login) {
         Transaction transactionOptional =
-                transactionRepository.findByUserId(userId)
+                transactionRepository.findByUserLogin(login)
                         .orElseThrow(RuntimeException::new);
         transactionRepository.delete(transactionOptional);
     }
