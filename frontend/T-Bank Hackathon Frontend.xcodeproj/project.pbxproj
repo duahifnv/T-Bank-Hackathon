@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA86186C2CF327E300900E87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86186B2CF327E300900E87 /* AppDelegate.swift */; };
+		FA86186E2CF327E300900E87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86186D2CF327E300900E87 /* SceneDelegate.swift */; };
+		FA8618752CF327E400900E87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8618742CF327E400900E87 /* Assets.xcassets */; };
+		FA8618782CF327E400900E87 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FA8618772CF327E400900E87 /* Base */; };
+		FA8618802CF3281200900E87 /* LogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86187F2CF3281200900E87 /* LogInCoordinator.swift */; };
+		FA8618822CF3282900900E87 /* HomeDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618812CF3282900900E87 /* HomeDescriptionView.swift */; };
+		FA8618842CF3283C00900E87 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618832CF3283C00900E87 /* HomeViewController.swift */; };
+		FA8618862CF3284F00900E87 /* LogInFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618852CF3284F00900E87 /* LogInFactory.swift */; };
+		FA8618882CF3285F00900E87 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618872CF3285F00900E87 /* AppFactory.swift */; };
+		FA86188A2CF328A200900E87 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618892CF328A200900E87 /* Auth.swift */; };
+		FA86188C2CF328CC00900E87 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86188B2CF328CC00900E87 /* CategoryModel.swift */; };
+		FA86188E2CF328EA00900E87 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86188D2CF328EA00900E87 /* AddViewController.swift */; };
+		FA8618902CF3294A00900E87 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86188F2CF3294A00900E87 /* RegisterViewModel.swift */; };
+		FA8618922CF3295D00900E87 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618912CF3295D00900E87 /* RegisterModel.swift */; };
+		FA8618942CF3297000900E87 /* LogInTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618932CF3297000900E87 /* LogInTextField.swift */; };
+		FA8618962CF3298400900E87 /* SignUpTransitionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618952CF3298400900E87 /* SignUpTransitionStackView.swift */; };
+		FA8618982CF3299700900E87 /* LogInMainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618972CF3299700900E87 /* LogInMainButton.swift */; };
+		FA86189A2CF329BC00900E87 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618992CF329BC00900E87 /* MainView.swift */; };
+		FA86189C2CF329CF00900E87 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86189B2CF329CF00900E87 /* LogInViewController.swift */; };
+		FA86189E2CF329E700900E87 /* RegisterNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86189D2CF329E700900E87 /* RegisterNetworkManager.swift */; };
+		FA8618A02CF329FA00900E87 /* RegisterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86189F2CF329FA00900E87 /* RegisterFactory.swift */; };
+		FA8618A22CF32A0B00900E87 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618A12CF32A0B00900E87 /* RegisterCoordinator.swift */; };
+		FA8618A42CF32A1D00900E87 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618A32CF32A1D00900E87 /* RegisterViewController.swift */; };
+		FA8618A62CF32A2F00900E87 /* HelperCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618A52CF32A2F00900E87 /* HelperCoordinator.swift */; };
+		FA8618A82CF32A3F00900E87 /* HelperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618A72CF32A3F00900E87 /* HelperViewController.swift */; };
+		FA8618AA2CF32A5300900E87 /* TypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618A92CF32A5300900E87 /* TypeModel.swift */; };
+		FA8618AC2CF32A6500900E87 /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618AB2CF32A6500900E87 /* AddViewModel.swift */; };
+		FA8618AE2CF32A7800900E87 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618AD2CF32A7800900E87 /* AppDIContainer.swift */; };
+		FA8618B02CF32A8800900E87 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618AF2CF32A8800900E87 /* AppCoordinator.swift */; };
+		FA8618B22CF32A9700900E87 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8618B12CF32A9700900E87 /* Coordinator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FA8618682CF327E300900E87 /* T-Bank Hackathon Frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T-Bank Hackathon Frontend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA86186B2CF327E300900E87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA86186D2CF327E300900E87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FA8618742CF327E400900E87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA8618772CF327E400900E87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA8618792CF327E400900E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA86187F2CF3281200900E87 /* LogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCoordinator.swift; sourceTree = "<group>"; };
+		FA8618812CF3282900900E87 /* HomeDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDescriptionView.swift; sourceTree = "<group>"; };
+		FA8618832CF3283C00900E87 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FA8618852CF3284F00900E87 /* LogInFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInFactory.swift; sourceTree = "<group>"; };
+		FA8618872CF3285F00900E87 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
+		FA8618892CF328A200900E87 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		FA86188B2CF328CC00900E87 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		FA86188D2CF328EA00900E87 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		FA86188F2CF3294A00900E87 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		FA8618912CF3295D00900E87 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		FA8618932CF3297000900E87 /* LogInTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInTextField.swift; sourceTree = "<group>"; };
+		FA8618952CF3298400900E87 /* SignUpTransitionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTransitionStackView.swift; sourceTree = "<group>"; };
+		FA8618972CF3299700900E87 /* LogInMainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInMainButton.swift; sourceTree = "<group>"; };
+		FA8618992CF329BC00900E87 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		FA86189B2CF329CF00900E87 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		FA86189D2CF329E700900E87 /* RegisterNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNetworkManager.swift; sourceTree = "<group>"; };
+		FA86189F2CF329FA00900E87 /* RegisterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFactory.swift; sourceTree = "<group>"; };
+		FA8618A12CF32A0B00900E87 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
+		FA8618A32CF32A1D00900E87 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FA8618A52CF32A2F00900E87 /* HelperCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperCoordinator.swift; sourceTree = "<group>"; };
+		FA8618A72CF32A3F00900E87 /* HelperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperViewController.swift; sourceTree = "<group>"; };
+		FA8618A92CF32A5300900E87 /* TypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeModel.swift; sourceTree = "<group>"; };
+		FA8618AB2CF32A6500900E87 /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
+		FA8618AD2CF32A7800900E87 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		FA8618AF2CF32A8800900E87 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		FA8618B12CF32A9700900E87 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA8618652CF327E300900E87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA86185F2CF327E300900E87 = {
+			isa = PBXGroup;
+			children = (
+				FA86186A2CF327E300900E87 /* T-Bank Hackathon Frontend */,
+				FA8618692CF327E300900E87 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA8618692CF327E300900E87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA8618682CF327E300900E87 /* T-Bank Hackathon Frontend.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA86186A2CF327E300900E87 /* T-Bank Hackathon Frontend */ = {
+			isa = PBXGroup;
+			children = (
+				FA8618B72CF32DB700900E87 /* Auth */,
+				FA8618BC2CF32EF400900E87 /* Scenes */,
+				FA8618BB2CF32EAE00900E87 /* Composition */,
+				FA8618742CF327E400900E87 /* Assets.xcassets */,
+				FA8618792CF327E400900E87 /* Info.plist */,
+			);
+			path = "T-Bank Hackathon Frontend";
+			sourceTree = "<group>";
+		};
+		FA8618B32CF32D2F00900E87 /* LifeCycle */ = {
+			isa = PBXGroup;
+			children = (
+				FA86186B2CF327E300900E87 /* AppDelegate.swift */,
+				FA86186D2CF327E300900E87 /* SceneDelegate.swift */,
+			);
+			path = LifeCycle;
+			sourceTree = "<group>";
+		};
+		FA8618B42CF32D4300900E87 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FA8618762CF327E400900E87 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		FA8618B52CF32D9800900E87 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FA8618A72CF32A3F00900E87 /* HelperViewController.swift */,
+				FA8618A52CF32A2F00900E87 /* HelperCoordinator.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		FA8618B62CF32DA600900E87 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FA8618832CF3283C00900E87 /* HomeViewController.swift */,
+				FA8618812CF3282900900E87 /* HomeDescriptionView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FA8618B72CF32DB700900E87 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FA8618892CF328A200900E87 /* Auth.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FA8618B82CF32DC100900E87 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FA8618972CF3299700900E87 /* LogInMainButton.swift */,
+				FA8618992CF329BC00900E87 /* MainView.swift */,
+				FA8618952CF3298400900E87 /* SignUpTransitionStackView.swift */,
+				FA8618932CF3297000900E87 /* LogInTextField.swift */,
+				FA86189B2CF329CF00900E87 /* LogInViewController.swift */,
+				FA8618852CF3284F00900E87 /* LogInFactory.swift */,
+				FA86187F2CF3281200900E87 /* LogInCoordinator.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FA8618B92CF32E0900900E87 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				FA8618AB2CF32A6500900E87 /* AddViewModel.swift */,
+				FA8618A92CF32A5300900E87 /* TypeModel.swift */,
+				FA86188B2CF328CC00900E87 /* CategoryModel.swift */,
+				FA86188D2CF328EA00900E87 /* AddViewController.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		FA8618BA2CF32E1E00900E87 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				FA86188F2CF3294A00900E87 /* RegisterViewModel.swift */,
+				FA8618912CF3295D00900E87 /* RegisterModel.swift */,
+				FA8618A32CF32A1D00900E87 /* RegisterViewController.swift */,
+				FA8618A12CF32A0B00900E87 /* RegisterCoordinator.swift */,
+				FA86189F2CF329FA00900E87 /* RegisterFactory.swift */,
+				FA86189D2CF329E700900E87 /* RegisterNetworkManager.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		FA8618BB2CF32EAE00900E87 /* Composition */ = {
+			isa = PBXGroup;
+			children = (
+				FA8618B32CF32D2F00900E87 /* LifeCycle */,
+				FA8618B12CF32A9700900E87 /* Coordinator.swift */,
+				FA8618AF2CF32A8800900E87 /* AppCoordinator.swift */,
+				FA8618AD2CF32A7800900E87 /* AppDIContainer.swift */,
+				FA8618872CF3285F00900E87 /* AppFactory.swift */,
+			);
+			path = Composition;
+			sourceTree = "<group>";
+		};
+		FA8618BC2CF32EF400900E87 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				FA8618B42CF32D4300900E87 /* LaunchScreen */,
+				FA8618B82CF32DC100900E87 /* Login */,
+				FA8618BA2CF32E1E00900E87 /* Register */,
+				FA8618B62CF32DA600900E87 /* Home */,
+				FA8618B52CF32D9800900E87 /* Helper */,
+				FA8618B92CF32E0900900E87 /* Add */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA8618672CF327E300900E87 /* T-Bank Hackathon Frontend */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA86187C2CF327E400900E87 /* Build configuration list for PBXNativeTarget "T-Bank Hackathon Frontend" */;
+			buildPhases = (
+				FA8618642CF327E300900E87 /* Sources */,
+				FA8618652CF327E300900E87 /* Frameworks */,
+				FA8618662CF327E300900E87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "T-Bank Hackathon Frontend";
+			productName = "T-Bank Hackathon Frontend";
+			productReference = FA8618682CF327E300900E87 /* T-Bank Hackathon Frontend.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA8618602CF327E300900E87 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					FA8618672CF327E300900E87 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = FA8618632CF327E300900E87 /* Build configuration list for PBXProject "T-Bank Hackathon Frontend" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA86185F2CF327E300900E87;
+			productRefGroup = FA8618692CF327E300900E87 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA8618672CF327E300900E87 /* T-Bank Hackathon Frontend */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA8618662CF327E300900E87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8618752CF327E400900E87 /* Assets.xcassets in Resources */,
+				FA8618782CF327E400900E87 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA8618642CF327E300900E87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8618862CF3284F00900E87 /* LogInFactory.swift in Sources */,
+				FA8618A42CF32A1D00900E87 /* RegisterViewController.swift in Sources */,
+				FA8618822CF3282900900E87 /* HomeDescriptionView.swift in Sources */,
+				FA86189C2CF329CF00900E87 /* LogInViewController.swift in Sources */,
+				FA8618922CF3295D00900E87 /* RegisterModel.swift in Sources */,
+				FA86188E2CF328EA00900E87 /* AddViewController.swift in Sources */,
+				FA8618AA2CF32A5300900E87 /* TypeModel.swift in Sources */,
+				FA8618AE2CF32A7800900E87 /* AppDIContainer.swift in Sources */,
+				FA86188C2CF328CC00900E87 /* CategoryModel.swift in Sources */,
+				FA86186C2CF327E300900E87 /* AppDelegate.swift in Sources */,
+				FA8618942CF3297000900E87 /* LogInTextField.swift in Sources */,
+				FA8618A02CF329FA00900E87 /* RegisterFactory.swift in Sources */,
+				FA8618882CF3285F00900E87 /* AppFactory.swift in Sources */,
+				FA8618A82CF32A3F00900E87 /* HelperViewController.swift in Sources */,
+				FA8618902CF3294A00900E87 /* RegisterViewModel.swift in Sources */,
+				FA8618A62CF32A2F00900E87 /* HelperCoordinator.swift in Sources */,
+				FA8618982CF3299700900E87 /* LogInMainButton.swift in Sources */,
+				FA8618B22CF32A9700900E87 /* Coordinator.swift in Sources */,
+				FA86189E2CF329E700900E87 /* RegisterNetworkManager.swift in Sources */,
+				FA86189A2CF329BC00900E87 /* MainView.swift in Sources */,
+				FA8618B02CF32A8800900E87 /* AppCoordinator.swift in Sources */,
+				FA8618802CF3281200900E87 /* LogInCoordinator.swift in Sources */,
+				FA86186E2CF327E300900E87 /* SceneDelegate.swift in Sources */,
+				FA8618A22CF32A0B00900E87 /* RegisterCoordinator.swift in Sources */,
+				FA8618AC2CF32A6500900E87 /* AddViewModel.swift in Sources */,
+				FA8618842CF3283C00900E87 /* HomeViewController.swift in Sources */,
+				FA8618962CF3298400900E87 /* SignUpTransitionStackView.swift in Sources */,
+				FA86188A2CF328A200900E87 /* Auth.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FA8618762CF327E400900E87 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA8618772CF327E400900E87 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA86187A2CF327E400900E87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA86187B2CF327E400900E87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA86187D2CF327E400900E87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "T-Bank Hackathon Frontend/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.T-Bank-Hackathon-Frontend";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FA86187E2CF327E400900E87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "T-Bank Hackathon Frontend/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.T-Bank-Hackathon-Frontend";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA8618632CF327E300900E87 /* Build configuration list for PBXProject "T-Bank Hackathon Frontend" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA86187A2CF327E400900E87 /* Debug */,
+				FA86187B2CF327E400900E87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA86187C2CF327E400900E87 /* Build configuration list for PBXNativeTarget "T-Bank Hackathon Frontend" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA86187D2CF327E400900E87 /* Debug */,
+				FA86187E2CF327E400900E87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA8618602CF327E300900E87 /* Project object */;
+}
