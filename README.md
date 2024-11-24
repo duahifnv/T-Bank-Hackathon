@@ -1,10 +1,7 @@
-<a id="readme-top"></a>
 # Финансовый Т-Помощник
 <!-- ABOUT THE PROJECT -->
 ## О проекте
-
-<p align="right">(<a href="#readme-top">Наверх</a>)</p>
-
+Мобильное приложение для IOS устройств, предоставляющее функции финансового помощника
 ## Демонстрация приложения
 ### Стек технологий
 ### Frontend
@@ -28,16 +25,10 @@ PostgreSQL</br>
    git remote -v
    ```
 
-<p align="right">(<a href="#readme-top">Наверх</a>)</p>
-
-
 <!-- ROADMAP -->
 ## Будущие идеи
 
 - [ ] Добавить бюджет пользователя
-
-<p align="right">(<a href="#readme-top">Наверх</a>)</p>
-
 
 
 <!-- CONTRIBUTING -->
@@ -55,9 +46,6 @@ git pull
 ## Контакты
 Телеграмм (Frontend IOS) - [@nocallmeok](https://t.me/nocallmeok)<br>
 Телеграмм (Backend) - [@fizalise](https://t.me/fizalise)
-
-<p align="right">(<a href="#readme-top">Наверх</a>)</p>
-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
