@@ -1,5 +1,7 @@
 package org.hack.controller;
 
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.hack.dto.UserDto;
 import org.hack.dto.WalletDto;
 import org.hack.entity.User;
@@ -19,25 +21,40 @@ import java.net.URISyntaxException;
 public class UserController {
     private final UserService userService;
     private final WalletService walletService;
-    @GetMapping("{/id}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Успешная выборка")
+    })
+    @GetMapping("/{id}")
     public ResponseEntity<UserDto> getUserById(@PathVariable Long id) {
         return ResponseEntity.ok().body(userService.findById(id));
     }
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Успешная выборка")
+    })
     @GetMapping("/{login}")
     public ResponseEntity<UserDto> getUserByLogin(@PathVariable String login) {
         return ResponseEntity.ok().body(userService.findByLogin(login));
     }
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Успешное создание нового пользователя")
+    })
     @PostMapping()
     public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto) {
         UserDto resultDto = userService.save(userDto);
         walletService.createWalletForUser(resultDto);
         return ResponseEntity.ok().body(resultDto);
     }
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Успешное обновление пользователя")
+    })
     @PutMapping()
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<UserDto> updateUser(@RequestBody UserDto userDto) {
         return ResponseEntity.ok().body(userService.save(userDto));
     }
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Успешное удаление пользователя")
+    })
     @DeleteMapping("/{login}")
     public ResponseEntity<?> deleteUserByLogin(@PathVariable String login) {
         userService.deleteByLogin(login);
