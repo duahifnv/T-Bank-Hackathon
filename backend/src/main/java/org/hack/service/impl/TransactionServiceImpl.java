@@ -33,21 +33,16 @@ public class TransactionServiceImpl implements TransactionService {
         return transactionMapper.toListDto(transactionRepository.findAll());
     }
     @Override
-    public List<TransactionDto> findAllByUserLogin(String login) {
-        List<Transaction> transactions =
-                transactionRepository.findAllByUserLogin(login)
-                        .orElseThrow(RuntimeException::new);
-        return transactionMapper.toListDto(transactions);
+    public Optional<List<TransactionDto>> findAllByUserLogin(String login) {
+        Optional<List<Transaction>> transactions =
+                transactionRepository.findAllByUserLogin(login);
+        return transactions.map(transactionMapper::toListDto);
     }
     @Override
-    public List<TransactionDto> findAllByUserLoginAndTransactionType(String login, String type) {
-        if (!transactionTypes.contains(type)) {
-            throw new RuntimeException("Не существующий тип");
-        }
-        List<Transaction> transactions =
-                transactionRepository.findAllByUserLoginAndTransactionType(login, type)
-                        .orElseThrow(RuntimeException::new);
-        return transactionMapper.toListDto(transactions);
+    public Optional<List<TransactionDto>> findAllByUserLoginAndTransactionType(String login, String type) {
+        Optional<List<Transaction>> transactions =
+                transactionRepository.findAllByUserLoginAndTransactionType(login, type);
+        return transactions.map(transactionMapper::toListDto);
     }
     @Override
     public TransactionDto add(TransactionDto transactionDto) {
@@ -59,10 +54,9 @@ public class TransactionServiceImpl implements TransactionService {
         return transactionMapper.modelToDto(transaction);
     }
     @Override
-    public void deleteByLogin(String login) {
-        Transaction transactionOptional =
-                transactionRepository.findByUserLogin(login)
-                        .orElseThrow(RuntimeException::new);
-        transactionRepository.delete(transactionOptional);
+    public Optional<TransactionDto> deleteByLogin(String login) {
+        Optional<Transaction> transactionOptional = transactionRepository.findByUserLogin(login);
+        transactionOptional.ifPresent(transactionRepository::delete);
+        return transactionOptional.map(transactionMapper::modelToDto);
     }
 }
