@@ -12,6 +12,7 @@ public interface UserService {
     UserDto findByLogin(String login);
     UserDto save(UserDto userDto);
     void deleteById(Long id);
+    void deleteByLogin(String login);
     boolean loginValid(LoginRequest request);
     boolean registerValid(UserDto userDto);
 }

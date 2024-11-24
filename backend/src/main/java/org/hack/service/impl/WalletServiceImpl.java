@@ -6,9 +6,9 @@ import org.hack.dto.WalletDto;
 import org.hack.entity.Wallet;
 import org.hack.mapper.WalletMapper;
 import org.hack.repository.WalletRepository;
+import org.hack.service.UserService;
 import org.hack.service.WalletService;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -19,6 +19,7 @@ import java.util.Optional;
 public class WalletServiceImpl implements WalletService {
     private final WalletRepository walletRepository;
     private final WalletMapper walletMapper;
+    private final UserService userService;
     @Override
     public List<WalletDto> findAll() {
         List<Wallet> wallets = walletRepository.findAll();
@@ -34,6 +35,22 @@ public class WalletServiceImpl implements WalletService {
         throw new RuntimeException("Отсутствует кошелек с id кошелька " + userId);
     }
     @Override
+    public WalletDto findByUserId(Long userId) {
+        Optional<Wallet> wallet = walletRepository.findByUserId(userId);
+        if (wallet.isPresent()) {
+            Wallet walletFromRepo = wallet.get();
+            return walletMapper.modelToDto(walletFromRepo);
+        }
+        throw new RuntimeException("Отсутствует кошелек с id пользователя " + userId);
+    }
+    @Override
+    public WalletDto findByUserLogin(String login) {
+        UserDto userDto = userService.findByLogin(login);
+        Wallet wallet = walletRepository.findByUserId(userDto.getId())
+                .orElseThrow(RuntimeException::new);
+        return walletMapper.modelToDto(wallet);
+    }
+    @Override
     public void createWalletForUser(UserDto userDto) {
         Long userId = userDto.getId();
         Optional<Wallet> wallet = walletRepository.findByUserId(userId);
@@ -43,16 +60,7 @@ public class WalletServiceImpl implements WalletService {
         }
         throw new RuntimeException("У пользователя " + userId + " уже есть кошелек");
     }
-    @Override
-    public WalletDto findByUserId(Long userId) {
-        System.out.println("ID искомого кошелька(findByUserId): " + userId);
-        Optional<Wallet> wallet = walletRepository.findByUserId(userId);
-        if (wallet.isPresent()) {
-            Wallet walletFromRepo = wallet.get();
-            return walletMapper.modelToDto(walletFromRepo);
-        }
-        throw new RuntimeException("Отсутствует кошелек с id пользователя " + userId);
-    }
+
     @Override
     public WalletDto save(WalletDto walletDto) {
         Wallet wallet = walletRepository.save(walletMapper.dtoToModel(walletDto));

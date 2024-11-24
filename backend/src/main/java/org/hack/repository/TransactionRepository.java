@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface TransactionRepository extends JpaRepository<Transaction, Long> {
-    Optional<List<Transaction>> findAllByUserIdAndTransactionType(Long userId, String transactionType);
-    Optional<List<Transaction>> findAllByUserId(Long userId);
-    Optional<Transaction> findByUserId(Long userId);
+    Optional<List<Transaction>> findAllByUserLoginAndTransactionType(String login, String transactionType);
+    Optional<List<Transaction>> findAllByUserLogin(String login);
+    Optional<Transaction> findByUserLogin(String userLogin);
 }

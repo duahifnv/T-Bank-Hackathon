@@ -44,12 +44,18 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public void deleteById(Long id) {
-        User user = userRepository.findById(id)
+        userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException(
                         "User with id: " + id + " not found"));
-        userRepository.delete(user);
+        userRepository.deleteById(id);
     }
-
+    @Override
+    public void deleteByLogin(String login) {
+        userRepository.findByLogin(login)
+                .orElseThrow(() -> new RuntimeException(
+                        "User with login: " + login + " not found"));
+        userRepository.deleteByLogin(login);
+    }
     @Override
     public boolean loginValid(LoginRequest request) {
         Optional<User> userOptional = userRepository.findByLogin(request.getLogin());

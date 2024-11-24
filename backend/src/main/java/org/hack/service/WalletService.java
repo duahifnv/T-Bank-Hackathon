@@ -11,6 +11,7 @@ public interface WalletService {
     List<WalletDto> findAll();
     WalletDto findById(Long userId);
     WalletDto findByUserId(Long userId);
+    WalletDto findByUserLogin(String login);
     WalletDto save(WalletDto walletDto);
     void deleteById(Long userId);
     void createWalletForUser(UserDto userDto);

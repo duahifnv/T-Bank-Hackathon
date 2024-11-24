@@ -1,6 +1,5 @@
 package org.hack.repository;
 
-import org.hack.entity.User;
 import org.hack.entity.Wallet;
 import org.springframework.data.jpa.repository.JpaRepository;
 
