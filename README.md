@@ -3,34 +3,25 @@
 <!-- ABOUT THE PROJECT -->
 ## О проекте
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 <p align="right">(<a href="#readme-top">Наверх</a>)</p>
 
+## Демонстрация приложения
 ### Стек технологий
 ### Frontend
-
+Swift
+UIKit – фреймворк для UI (Swift)
 ### Backend
-
+Spring Boot – удобная конфигурация серверных приложений
+Spring Data – гибкая работа с базой данных
+PostgreSQL – быстрая и производительная БД
+Swagger – документация HTTP запросов клиента
 ### База данных
-<p align="right">(<a href="#readme-top">Наверх</a>)</p>
-<!-- GETTING STARTED -->
-## Приступая к использованию
-
-###  Предустановка зависимостей
-
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
+PostgreSQL</br>
 ### Установка
-
 1. Клонируйте репозиторий
    ```sh
    git clone https://github.com/duahifnv/T-Bank-Hackathon.git
    ```
-   
 2. Измените удаленный URL-адрес git, чтобы избежать случайных отправок в базовый проект
    ```sh
    git remote set-url origin <имя_на_гитхабе>/<имя_репозитория>
