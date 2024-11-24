@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "wallet")
 @NoArgsConstructor
@@ -17,7 +19,7 @@ public class Wallet {
     @PrimaryKeyJoinColumn(name = "user_id")
     private Long userId;
     @Column(name = "total", nullable = false)
-    private double total;
+    private BigDecimal total;
     @OneToOne
     @MapsId
     @JoinColumn(name = "user_id")
