@@ -24,13 +24,6 @@ public class UserController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Успешная выборка")
     })
-    @GetMapping("/{id}")
-    public ResponseEntity<UserDto> getUserById(@PathVariable Long id) {
-        return ResponseEntity.ok().body(userService.findById(id));
-    }
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Успешная выборка")
-    })
     @GetMapping("/{login}")
     public ResponseEntity<UserDto> getUserByLogin(@PathVariable String login) {
         return ResponseEntity.ok().body(userService.findByLogin(login));
