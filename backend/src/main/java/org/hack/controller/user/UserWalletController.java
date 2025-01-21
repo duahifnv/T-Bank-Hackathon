@@ -33,4 +33,10 @@ public class UserWalletController {
                                 walletRequest, userService.findUserByUsername(principal.getName()))
                 ));
     }
+    @DeleteMapping("/{walletId}")
+    public ResponseEntity<?> deleteWalletById(@PathVariable Long walletId,
+                                              Principal principal) {
+        walletService.deleteWalletById(walletId, principal);
+        return ResponseEntity.ok().build();
+    }
 }
