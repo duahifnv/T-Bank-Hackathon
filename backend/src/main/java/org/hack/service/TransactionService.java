@@ -77,17 +77,6 @@ public class TransactionService {
                         HttpStatus.NOT_FOUND, "Не найдена транзакция с id " + transactionId));
     }
     @Transactional
-    public Transaction createNewTransaction(TransactionRequest transactionRequest, Principal principal) {
-        List<Wallet> userWallets = walletService.findAllWalletsByUsername(principal.getName());
-        userWallets.stream().
-                map(Wallet::getWalletId)
-                .filter(id -> id.equals(transactionRequest.walletId()))
-                .findAny().orElseThrow(() -> new ResponseStatusException(
-                                HttpStatus.FORBIDDEN, "Нет доступа к кошельку с id " +
-                                    transactionRequest.walletId()));
-        return createNewTransaction(transactionRequest);
-    }
-    @Transactional
     public Transaction createNewTransaction(TransactionRequest transactionRequest) {
         try {
             validateTransactionRequest(transactionRequest);
@@ -100,6 +89,16 @@ public class TransactionService {
         return transactionRepository.save(
                 transactionMapper.toTransaction(transactionRequest)
         );
+    }
+    @Transactional
+    public Transaction createNewTransaction(TransactionRequest transactionRequest, Principal principal) {
+        if (walletService.userHasAccessToWallet(principal.getName(),
+                transactionRequest.walletId())) {
+            throw new ResponseStatusException(
+                    HttpStatus.FORBIDDEN, "Нет доступа к кошельку с id " +
+                    transactionRequest.walletId());
+        }
+        return createNewTransaction(transactionRequest);
     }
     @Transactional
     public void deleteTransactionById(Long transactionId) {
