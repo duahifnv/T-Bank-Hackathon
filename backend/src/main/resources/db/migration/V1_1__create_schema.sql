@@ -49,5 +49,5 @@ create table transactions
     type_id int not null references transaction_types,
     wallet_id bigint not null references wallets,
     amount numeric(10, 2) not null,
-    category_id int references transaction_categories
+    category_id int references transaction_categories on delete set null
 );
