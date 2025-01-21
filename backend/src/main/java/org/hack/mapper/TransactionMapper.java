@@ -1,8 +1,10 @@
 package org.hack.mapper;
 
+import org.hack.dto.request.TransactionCategoryRequest;
 import org.hack.dto.request.TransactionRequest;
 import org.hack.dto.response.TransactionResponse;
 import org.hack.entity.Transaction;
+import org.hack.entity.TransactionCategory;
 import org.hack.entity.Wallet;
 import org.hack.service.WalletService;
 import org.mapstruct.Mapper;
@@ -23,6 +25,7 @@ public abstract class TransactionMapper {
     @Mapping(source = "wallet", target = "walletId", qualifiedByName = "walletToWalletId")
     public abstract TransactionResponse toTransactionResponse(Transaction transaction);
     public abstract List<TransactionResponse> toTransactionResponse(List<Transaction> transactions);
+    public abstract TransactionCategory toTransactionCategory(TransactionCategoryRequest request);
     @Named("walletIdToWallet")
     protected Wallet walletIdToWallet(Long walletId) {
         return walletService.findWalletById(walletId);
