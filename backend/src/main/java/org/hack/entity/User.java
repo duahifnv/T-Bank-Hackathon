@@ -2,31 +2,38 @@ package org.hack.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Collection;
 import java.util.List;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users", schema = "public", catalog = "tbank_db")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Builder
 public class User {
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     @Column(name = "user_id")
-    private Long id;
-    @Column(name = "login", unique = true, nullable = false)
-    private String login;
-    @Column(name = "pass", nullable = false)
+    private Long userId;
+    @Basic
+    @Column(name = "username")
+    private String username;
+    @Basic
+    @Column(name = "email")
+    private String email;
+    @Basic
+    @Column(name = "password")
     private String password;
-    @Column(name = "name", nullable = false)
-    private String name;
-    @Column(name = "surname", nullable = false)
-    private String surname;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Transaction> transactions;
+    @ManyToMany
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Collection<Role> roles;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Wallet> wallets;
 }
