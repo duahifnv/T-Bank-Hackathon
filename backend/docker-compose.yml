@@ -1,0 +1,37 @@
+services:
+  bankDB:
+    container_name: "bank-database-container"
+    image: postgres:17.2
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+      PGDATA: /var/lib/postgresql/data # Путь, где в контейнере хранятся данные БД
+    volumes:
+      - ./docker/pgsql:/docker-entrypoint-initdb.d # Папка инициализации БД проекта связан с файлом в контейнере
+      - db-data:/var/lib/postgresql/data # Папка докера db-data связана с данными БД контейнера
+    ports:
+      - "6543:5432" # Проброс порта localhost:6543 на внутренний порт контейнера 5432 (5432 не трогать)
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d bank_db"] # Команда для проверки состояния контейнера
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped # Контейнер не перезагружается сам
+  springBootApp:
+    container_name: "spring-boot-application"
+    image: client:0.0.1
+    build:
+      context: .
+      dockerfile: /docker/spring-boot/Dockerfile
+    volumes:
+      - ./src/main/resources/application.yml:/config/application.yml
+      - ./:/app
+    environment:
+      SPRING_CONFIG_LOCATION: /config/application.yml
+    depends_on:
+      - bankDB
+    ports:
+      - "8081:8081" # Проброс порта localhost:8081 на внутренний порт контейнера 8081
+volumes:
+  db-data:

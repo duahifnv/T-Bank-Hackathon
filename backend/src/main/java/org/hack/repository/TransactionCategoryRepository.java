@@ -9,4 +9,6 @@ import java.util.Optional;
 @Repository
 public interface TransactionCategoryRepository extends JpaRepository<TransactionCategory, Integer> {
     Optional<TransactionCategory> findByName(String name);
+    boolean existsByName(String name);
+    void deleteByName(String name);
 }

@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigDecimal;
+import java.security.Principal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -43,6 +44,11 @@ public class WalletService {
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.NOT_FOUND, "Не найден кошелек с id " + walletId));
     }
+    public BigDecimal getWalletBalance(Long walletId) {
+        return walletRepository.findById(walletId)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.BAD_REQUEST, "Не найден кошелек с id " + walletId)).getBalance();
+    }
     @Transactional
     public Wallet createNewWallet(WalletRequest walletRequest, User user) {
         if (walletRequest.balance().compareTo(BigDecimal.ZERO) < 0) {
@@ -61,10 +67,17 @@ public class WalletService {
         }
         walletRepository.deleteById(walletId);
     }
-    public BigDecimal getWalletBalance(Long walletId) {
-        return walletRepository.findById(walletId)
-                .orElseThrow(() -> new ResponseStatusException(
-                        HttpStatus.BAD_REQUEST, "Не найден кошелек с id " + walletId)).getBalance();
+    @Transactional
+    public void deleteWalletById(Long walletId, Principal principal) {
+        if (!this.existsById(walletId)) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST, "Не найден кошелек с id " + walletId);
+        }
+        if (!userHasAccessToWallet(principal.getName(), walletId)) {
+            throw new ResponseStatusException(
+                    HttpStatus.FORBIDDEN, "Нет доступа к кошельку с id " + walletId);
+        }
+        deleteWalletById(walletId);
     }
     @Transactional
     public void updateWalletBalance(Long walletId, BigDecimal change) {
@@ -82,6 +95,11 @@ public class WalletService {
     }
     public boolean existsById(Long walletId) {
         return walletRepository.existsById(walletId);
+    }
+    public boolean userHasAccessToWallet(String username, Long walletId) {
+        return this.findAllWalletsByUsername(username).stream()
+                .map(Wallet::getWalletId)
+                .anyMatch(id -> id.equals(walletId));
     }
     private Wallet saveWallet(Wallet wallet) {
         wallet.setLastUpdateDate(LocalDate.now());

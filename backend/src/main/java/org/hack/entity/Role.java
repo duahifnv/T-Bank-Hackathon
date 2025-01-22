@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "roles", schema = "public", catalog = "tbank_db")
+@Table(name = "roles", schema = "public")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

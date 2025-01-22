@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Table(name = "wallets", schema = "public", catalog = "tbank_db")
+@Table(name = "wallets", schema = "public")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
