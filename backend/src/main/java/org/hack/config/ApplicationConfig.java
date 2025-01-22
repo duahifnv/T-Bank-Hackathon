@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 
 @Configuration
 public class ApplicationConfig {
-    @Value("${flyway.locations}")
+    @Value("${spring.flyway.locations}")
     private String locations;
     @Bean
     public Flyway flyway(DataSource dataSource) {
