@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity
-@Table(name = "users", schema = "public", catalog = "tbank_db")
+@Table(name = "users", schema = "public")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
